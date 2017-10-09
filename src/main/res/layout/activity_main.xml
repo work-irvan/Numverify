@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.skripsi.muhammad_irvan.numverify.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:elevation="2dp"
+        app:elevation="2dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:padding="10dp"
+            android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title"
+            android:gravity="center_horizontal"
+            android:text="Numverify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:paddingBottom="10dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Subtitle"
+            android:gravity="center_horizontal"
+            android:text="Global Phone Number Validation &amp; Lookup JSON API"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.AppBarLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:hint="Masukan Nomor Telepon"
+            android:id="@+id/phoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="#a7a7a7"
+            android:text="*Nomor telepon harus menggunakan format kode negara"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/request"
+                android:text="verify"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content" />
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_marginLeft="10dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+        </LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/layoutData"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                    android:text="Valid"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/text_valid"
+                    android:layout_marginBottom="10dp"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+                    android:text="-"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                    android:text="Number"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/text_number"
+                    android:layout_marginBottom="10dp"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+                    android:text="-"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                    android:text="Local Format"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/text_localformat"
+                    android:layout_marginBottom="10dp"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+                    android:text="-"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                    android:text="International Format"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/text_interformat"
+                    android:layout_marginBottom="10dp"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+                    android:text="-"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                    android:text="Country Code"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/text_counterycode"
+                    android:layout_marginBottom="10dp"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+                    android:text="-"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                    android:text="Country Name"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/text_counteryname"
+                    android:layout_marginBottom="10dp"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+                    android:text="-"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                    android:text="Location"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/text_location"
+                    android:layout_marginBottom="10dp"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+                    android:text="-"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                    android:text="Carrier"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/text_carier"
+                    android:layout_marginBottom="10dp"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+                    android:text="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                    android:text="Line Type"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/text_linetype"
+                    android:layout_marginBottom="10dp"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+                    android:text="-"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>
